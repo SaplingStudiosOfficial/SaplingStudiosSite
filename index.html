@@ -1,80 +1,215 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Sapling Studios</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-	<style>
-		.logo {
-			border-radius: 50%;
-			height: 200px;
-			width: 200px;
-			object-fit: cover;
-			object-position: center;
-			margin: 20px auto 0;
-			display: block;
-		}
-		.game-image {
-			border-radius: 10px;
-			transition: all 0.2s ease-in-out;
-		}
-		.game-image:hover {
-			transform: scale(1.05);
-			box-shadow: 0 0 10px rgba(0,0,0,0.3);
-		}
-		body {
-			background-color: #e6f2ff;
-		}
-		.pixel-text {
-			font-size: 16px;
-			line-height: 1;
-			letter-spacing: -1px;
-			font-family: "Courier New", Courier, monospace;
-		}
-		
-	</style>
-</head>
-<body class="pixel-text">
-	<header class="container">
-		<img src="Logo.png" alt="Video Games Studio Logo" class="logo">
-		<h1 class="text-center">Sapling Studios</h1>
-	</header>
-	
-	<section class="about-us">
-			<div class="container">
-				<h2>About Us</h2>
-				<p>John Gonzalez has always dreamed of becoming a video game developer since he was 10 years old. As a child, he loved to pretend he was a hero and play with sticks outside. His passion for video games and storytelling led him to pursue a career in game development.</p>
-				<p>Today, John is the founder of Sapling Studios, where he works with a wide variety of creative, passionate people. John's goal is to create games that draw people into a new world, where they can be the heroes of their own stories. He believes that video games have the power to transport players to new places and inspire them to be their best selves not only on the grid, but in the real world.</p>
-			</div>
-		</section>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapling Studios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #b3d9ff, #6699cc); /* Gradient from light blue to darker blue */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
 
-	<main class="container my-5">
-		<h1 class="text-center">Our Games</h1>
-		<h1></h1>
-		<div class="row justify-content-center">
-			<div class="col-md-6 col-lg-4 mb-4">
-				<a href="https://store.steampowered.com/app/2393410/The_Rusty_Longsword/" target="_blank">
-					<img src="RustyLongsword.png" alt="The Rusty Longsword" class="img-fluid game-image">
-				</a>
-			</div>
-		
-			<div class="col-md-6 col-lg-4 mb-4">
-				<a href="https://store.steampowered.com/app/1745410/Skattered_Dream/" target="_blank">
-					<img src="SkatteredDream.png" alt="Skattered Dream" class="img-fluid game-image">
-				</a>
-			</div>
-		</div>
-	</main>
-	
-	<footer class="container text-center my-5">
-		<h2>Contact Us</h2>
-		<p>Sapling Studios</p>
-		<p>448 E 600 N Apt. 27</p>
-		<p>Provo, UT</p>
-		<p>Email: john.gonzalez@sapling-studios.com</p>
-	</footer>
+        .header-banner {
+            background: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            border-radius: 50%;
+            height: 150px;
+            width: 150px;
+            object-fit: cover;
+            margin: 10px auto;
+            display: block;
+            border: 4px solid white;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h1, h2 {
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .profile-photo {
+            border-radius: 50%;
+            height: 200px;
+            width: 200px;
+            object-fit: cover;
+            margin: 20px auto;
+            display: block;
+            border: 5px solid #fff;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        p {
+            font-size: 1.1em;
+            color: #f5f5f5;
+            line-height: 1.8;
+        }
+
+        .about-us, .biography, .skills {
+            background: linear-gradient(135deg, #333, #2c3e50); /* Dark gray gradient */
+            padding: 50px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px; /* Space between text boxes */
+        }
+
+            .skills ul {
+                list-style-type: none;
+                padding: 0;
+                font-size: 1.1em;
+                color: #f5f5f5;
+            }
+
+                .skills ul li {
+                    margin-bottom: 10px;
+                }
+
+        .game-image {
+            border-radius: 10px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border: 3px solid #3cb371; /* Green border */
+        }
+
+            .game-image:hover {
+                transform: scale(1.1);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            }
+
+        .container-fluid {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .row {
+            margin: 0;
+        }
+
+        .footer {
+            background: #2c3e50; /* Darker gray */
+            color: #fff;
+            padding: 20px 0;
+        }
+
+            .footer p {
+                margin: 0;
+                font-size: 1em;
+            }
+
+            .footer .social-icons a {
+                color: #fff;
+                margin: 0 10px;
+                font-size: 1.5em;
+                transition: color 0.3s;
+            }
+
+                .footer .social-icons a:hover {
+                    color: #3cb371; /* Green hover effect */
+                }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .logo {
+                height: 120px;
+                width: 120px;
+            }
+
+            .profile-photo {
+                height: 150px;
+                width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="text-center header-banner">
+        <img src="Logo.png" alt="Sapling Studios Logo" class="logo">
+        <h1>Sapling Studios</h1>
+    </header>
+
+    <section class="about-us container-fluid text-center">
+        <h2>About Us</h2>
+        <p>At Sapling Studios, we believe in the power of storytelling through games. Founded by John Gonzalez, our studio is dedicated to creating immersive worlds where players can become the heroes of their own stories. We aim to craft experiences that not only entertain but inspire players to be their best selves, both in-game and in the real world.</p>
+    </section>
+
+    <section class="biography container-fluid text-center">
+        <h2>Biography</h2>
+        <img src="ProfilePhoto.png" alt="John Gonzalez" class="profile-photo">
+        <p>John Gonzalez has always been passionate about video games and storytelling. From a young age, he dreamed of creating worlds where players could embark on epic adventures and be the heroes of their own stories. This passion led him to pursue a career in game development, where he founded Sapling Studios.</p>
+        <p>With years of experience in game design, programming, and art, John has successfully developed and launched several critically acclaimed games. His work is characterized by a deep commitment to quality, creativity, and user experience. John's journey in game development is driven by his belief that video games have the power to inspire and bring out the best in people, both on and off the screen.</p>
+    </section>
+
+    <section class="skills container-fluid text-center">
+        <h2>Skills</h2>
+        <ul>
+            <li>Programming Languages: Java, C#, JavaScript, Python, TypeScript</li>
+            <li>Game Development: Unity, Unreal Engine, WebGL, GLSL</li>
+            <li>Design: UX/UI Design, Level Design, Puzzle Design, Narrative Design</li>
+            <li>Tools: Blender (Modeling and Basic Animation), Krita</li>
+            <li>Backend Development: Node.js, API Integration, Server Development</li>
+            <li>Project Management: Agile Methodologies, Team Leadership</li>
+        </ul>
+    </section>
+
+    <main class="container-fluid text-center">
+        <h2>Our Games</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <a href="https://store.steampowered.com/app/2393410/The_Rusty_Longsword/" target="_blank">
+                    <img src="RustyLongsword.png" alt="The Rusty Longsword" class="img-fluid game-image">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="https://store.steampowered.com/app/1745410/Skattered_Dream/" target="_blank">
+                    <img src="SkatteredDream.png" alt="Skattered Dream" class="img-fluid game-image">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="https://saplingstudios.itch.io/snail-clicker" target="_blank">
+                    <img src="SnailClicker.png" alt="Snail Clicker" class="img-fluid game-image">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="https://yourlinktorewind.com" target="_blank">
+                    <img src="Rewind.jpg" alt="Rewind" class="img-fluid game-image">
+                </a>
+            </div>
+            <!-- Add more games here -->
+        </div>
+    </main>
+
+    <footer class="footer text-center">
+        <div class="container">
+            <p>Sapling Studios</p>
+            <p>448 E 600 N Apt. 27, Provo, UT</p>
+            <p>Email: john.gonzalez@sapling-studios.com</p>
+            <div class="social-icons">
+                <a href="https://x.com/StudiosSapling" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/john-gonzalez-14a72a268/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
