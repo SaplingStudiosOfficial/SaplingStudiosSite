@@ -9,199 +9,263 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(to bottom, #b3d9ff, #6699cc); /* Gradient from light blue to darker blue */
-            color: #333;
+            background: linear-gradient(to bottom, #2c3e50, #1a252f); /* Dark gradient */
+            color: #f5f5f5;
             margin: 0;
-            padding: 0;
-            overflow-x: hidden;
+            padding: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .content-container {
+            flex: 0 0 50%; /* Adjusted width for better balance */
+            max-width: 50%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .game-container {
+            flex: 0 0 45%; /* Adjusted width for better balance */
+            max-width: 45%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
 
         .header-banner {
-            background: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
-            padding: 20px 0;
+            text-align: left;
             margin-bottom: 20px;
         }
 
         .logo {
             border-radius: 50%;
-            height: 150px;
-            width: 150px;
+            height: 80px;
+            width: 80px;
             object-fit: cover;
-            margin: 10px auto;
-            display: block;
-            border: 4px solid white;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        h1, h2 {
-            font-weight: 700;
-            color: #fff;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            margin-right: 10px;
+            border: 3px solid white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            vertical-align: middle;
         }
 
         h1 {
-            font-size: 3em;
+            font-size: 2em;
+            color: #3cb371;
+            display: inline-block;
+            vertical-align: middle;
             margin: 0;
+            padding-left: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .biography h2, .skills h2, .game-container h2 {
+            font-size: 1.8em;
+            color: #e67e22; /* Vibrant orange color */
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
 
         .profile-photo {
             border-radius: 50%;
-            height: 200px;
-            width: 200px;
+            height: 80px;
+            width: 80px;
             object-fit: cover;
-            margin: 20px auto;
-            display: block;
-            border: 5px solid #fff;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 15px;
+            border: 3px solid #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
         }
 
         p {
-            font-size: 1.1em;
-            color: #f5f5f5;
-            line-height: 1.8;
+            font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #ecf0f1; /* Lightened text color */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
-        .about-us, .biography, .skills {
-            background: linear-gradient(135deg, #333, #2c3e50); /* Dark gray gradient */
-            padding: 50px 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px; /* Space between text boxes */
+        .skills ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 1em;
         }
 
-            .skills ul {
-                list-style-type: none;
-                padding: 0;
-                font-size: 1.1em;
-                color: #f5f5f5;
+            .skills ul li {
+                margin-bottom: 8px;
+                font-weight: bold;
+                color: #bdc3c7; /* Softer grey */
             }
-
-                .skills ul li {
-                    margin-bottom: 10px;
-                }
 
         .game-image {
             border-radius: 10px;
             transition: all 0.3s ease-in-out;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            border: 3px solid #3cb371; /* Green border */
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            border: 3px solid #3cb371;
+            width: 100%;
+            max-width: 300px; /* Larger size */
+            margin: 20px 0;
+            cursor: pointer;
         }
 
             .game-image:hover {
                 transform: scale(1.1);
-                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+                border-color: #e67e22; /* Orange border on hover */
             }
 
-        .container-fluid {
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .row {
-            margin: 0;
-        }
-
         .footer {
-            background: #2c3e50; /* Darker gray */
+            background: #2c3e50;
             color: #fff;
-            padding: 20px 0;
+            padding: 10px 0;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            font-size: 0.8em;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
             .footer p {
                 margin: 0;
-                font-size: 1em;
             }
 
-            .footer .social-icons a {
-                color: #fff;
-                margin: 0 10px;
-                font-size: 1.5em;
-                transition: color 0.3s;
+        .social-icons a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+            .social-icons a:hover {
+                color: #e67e22; /* Orange color on hover */
             }
 
-                .footer .social-icons a:hover {
-                    color: #3cb371; /* Green hover effect */
-                }
+        .background-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
 
         @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+                height: auto; /* Adjust for mobile */
+            }
+
+            .content-container, .game-container {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+
             h1 {
-                font-size: 2.5em;
+                font-size: 1.5em;
             }
 
             .logo {
-                height: 120px;
-                width: 120px;
+                height: 60px;
+                width: 60px;
             }
 
             .profile-photo {
-                height: 150px;
-                width: 150px;
+                height: 60px;
+                width: 60px;
+            }
+
+            .game-image {
+                max-width: 240px; /* Larger for mobile as well */
+            }
+
+            .footer {
+                font-size: 0.7em;
             }
         }
     </style>
 </head>
 <body>
 
-    <header class="text-center header-banner">
-        <img src="Logo.png" alt="Sapling Studios Logo" class="logo">
-        <h1>Sapling Studios</h1>
-    </header>
+    <div class="background-overlay" id="backgroundOverlay"></div>
 
-    <section class="about-us container-fluid text-center">
-        <h2>About Us</h2>
-        <p>At Sapling Studios, we believe in the power of storytelling through games. Founded by John Gonzalez, our studio is dedicated to creating immersive worlds where players can become the heroes of their own stories. We aim to craft experiences that not only entertain but inspire players to be their best selves, both in-game and in the real world.</p>
-    </section>
+    <div class="content-container">
+        <header class="header-banner">
+            <img src="Logo.png" alt="Sapling Studios Logo" class="logo">
+            <h1>Sapling Studios</h1>
+        </header>
 
-    <section class="biography container-fluid text-center">
-        <h2>Biography</h2>
-        <img src="ProfilePhoto.png" alt="John Gonzalez" class="profile-photo">
-        <p>John Gonzalez has always been passionate about video games and storytelling. From a young age, he dreamed of creating worlds where players could embark on epic adventures and be the heroes of their own stories. This passion led him to pursue a career in game development, where he founded Sapling Studios.</p>
-        <p>With years of experience in game design, programming, and art, John has successfully developed and launched several critically acclaimed games. His work is characterized by a deep commitment to quality, creativity, and user experience. John's journey in game development is driven by his belief that video games have the power to inspire and bring out the best in people, both on and off the screen.</p>
-    </section>
-
-    <section class="skills container-fluid text-center">
-        <h2>Skills</h2>
-        <ul>
-            <li>Programming Languages: Java, C#, JavaScript, Python, TypeScript</li>
-            <li>Game Development: Unity, Unreal Engine, WebGL, GLSL</li>
-            <li>Design: UX/UI Design, Level Design, Puzzle Design, Narrative Design</li>
-            <li>Tools: Blender (Modeling and Basic Animation), Krita</li>
-            <li>Backend Development: Node.js, API Integration, Server Development</li>
-            <li>Project Management: Agile Methodologies, Team Leadership</li>
-        </ul>
-    </section>
-
-    <main class="container-fluid text-center">
-        <h2>Our Games</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <a href="https://store.steampowered.com/app/2393410/The_Rusty_Longsword/" target="_blank">
-                    <img src="RustyLongsword.png" alt="The Rusty Longsword" class="img-fluid game-image">
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="https://store.steampowered.com/app/1745410/Skattered_Dream/" target="_blank">
-                    <img src="SkatteredDream.png" alt="Skattered Dream" class="img-fluid game-image">
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="https://saplingstudios.itch.io/snail-clicker" target="_blank">
-                    <img src="SnailClicker.png" alt="Snail Clicker" class="img-fluid game-image">
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="https://yourlinktorewind.com" target="_blank">
-                    <img src="Rewind.jpg" alt="Rewind" class="img-fluid game-image">
-                </a>
-            </div>
-            <!-- Add more games here -->
+        <div class="biography">
+            <h2>Biography</h2>
+            <img src="ProfilePhoto.png" alt="John Gonzalez" class="profile-photo">
+            <p>John Gonzalez has always been passionate about video games and storytelling. From a young age, he dreamed of creating worlds where players could embark on epic adventures and be the heroes of their own stories. This passion led him to pursue a career in game development, where he founded Sapling Studios.</p>
+            <p>With years of experience in game design, programming, and art, John has successfully developed and launched several critically acclaimed games. His work is characterized by a deep commitment to quality, creativity, and user experience.</p>
         </div>
-    </main>
 
-    <footer class="footer text-center">
+        <div class="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Programming Languages: Java, C#, JavaScript, Python, TypeScript</li>
+                <li>Game Development: Unity, Unreal Engine, WebGL, GLSL</li>
+                <li>Design: UX/UI Design, Level Design, Puzzle Design, Narrative Design</li>
+                <li>Tools: Blender, Krita</li>
+                <li>Backend Development: Node.js, API Integration, Server Development</li>
+                <li>Project Management: Agile Methodologies, Team Leadership</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="game-container">
+        <h2>Our Games</h2>
+        <div>
+            <a href="https://store.steampowered.com/app/2393410/The_Rusty_Longsword/" target="_blank">
+                <img src="RustyLongsword.png" alt="The Rusty Longsword" class="img-fluid game-image"
+                     onmouseover="changeBackground('RustyLongsword.png')"
+                     onmouseout="resetBackground()">
+            </a>
+            <a href="https://store.steampowered.com/app/1745410/Skattered_Dream/" target="_blank">
+                <img src="SkatteredDream.png" alt="Skattered Dream" class="img-fluid game-image"
+                     onmouseover="changeBackground('SkatteredDream.png')"
+                     onmouseout="resetBackground()">
+            </a>
+            <a href="https://saplingstudios.itch.io/snail-clicker" target="_blank">
+                <img src="SnailClicker.png" alt="Snail Clicker" class="img-fluid game-image"
+                     onmouseover="changeBackground('SnailClicker.png')"
+                     onmouseout="resetBackground()">
+            </a>
+            <a href="https://yourlinktorewind.com" target="_blank">
+                <img src="Rewind.jpg" alt="Rewind" class="img-fluid game-image"
+                     onmouseover="changeBackground('Rewind.jpg')"
+                     onmouseout="resetBackground()">
+            </a>
+        </div>
+    </div>
+
+    <footer class="footer">
         <div class="container">
             <p>Sapling Studios</p>
-            <p>448 E 600 N Apt. 27, Provo, UT</p>
+            <p>New Bern, North Carolina</p>
             <p>Email: john.gonzalez@sapling-studios.com</p>
             <div class="social-icons">
                 <a href="https://x.com/StudiosSapling" target="_blank"><i class="fab fa-twitter"></i></a>
@@ -210,6 +274,17 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function changeBackground(imageUrl) {
+            document.getElementById('backgroundOverlay').style.backgroundImage = `url(${imageUrl})`;
+            document.getElementById('backgroundOverlay').style.opacity = 0.5;
+        }
+
+        function resetBackground() {
+            document.getElementById('backgroundOverlay').style.opacity = 0;
+        }
+    </script>
 
 </body>
 </html>
