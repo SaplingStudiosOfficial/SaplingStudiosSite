@@ -18,7 +18,7 @@
             justify-content: space-between;
             align-items: flex-start;
             height: 100vh;
-            box-sizing: border-box;
+            box-sizing: border-box; 
         }
 
         .content-container {
@@ -119,8 +119,8 @@
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
             border: 3px solid #3cb371;
             width: 100%;
-            max-width: 300px; /* Larger size */
-            margin: 20px 0;
+            max-width: 240px; /* Larger size */
+            margin: 10px 0;
             cursor: pointer;
         }
 
@@ -259,54 +259,33 @@
     </div>
 
     <div class="game-container">
-        <h2>Our Games</h2>
-        <div>
-            <a href="therustylongsword.html" target="_blank">
-                <img src="RustyLongsword.png" alt="The Rusty Longsword" class="img-fluid game-image"
-                     onmouseover="changeBackground('RustyLongsword.png')"
-                     onmouseout="resetBackground()">
+        <h2>Games</h2>
+
+        <a href="skattereddream.html" class="game-link">
+            <img src="SkatteredDream.png" alt="Skattered Dream" class="game-image">
             </a>
-            <a href="skattereddream.html" target="_blank">
-                <img src="SkatteredDream.png" alt="Skattered Dream" class="img-fluid game-image"
-                     onmouseover="changeBackground('SkatteredDream.png')"
-                     onmouseout="resetBackground()">
+
+        <a href="https://saplingstudios.itch.io/snail-clicker" class="game-link">
+            <img src="SnailClicker.png" alt="Snail Clicker" class="game-image">
             </a>
-            <a href="https://saplingstudios.itch.io/snail-clicker" target="_blank">
-                <img src="SnailClicker.png" alt="Snail Clicker" class="img-fluid game-image"
-                     onmouseover="changeBackground('SnailClicker.png')"
-                     onmouseout="resetBackground()">
+
+        <a href="rewind.html" class="game-link">
+            <img src="Rewind.jpg" alt="REWIND" class="game-image">
             </a>
-            <a href="rewind.html" target="_blank">
-                <img src="Rewind.jpg" alt="Rewind" class="img-fluid game-image"
-                     onmouseover="changeBackground('Rewind.jpg')"
-                     onmouseout="resetBackground()">
+
+        <a href="therustylongsword.html" class="game-link">
+            <img src="RustyLongsword.png" alt="The Rusty Longsword" class="game-image">
             </a>
-        </div>
     </div>
 
     <footer class="footer">
-        <div class="container">
-            <p>Sapling Studios</p>
-            <p>New Bern, North Carolina</p>
-            <p>Email: john.gonzalez@sapling-studios.com</p>
-            <div class="social-icons">
-                <a href="https://x.com/StudiosSapling" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.linkedin.com/in/john-gonzalez-14a72a268/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-            </div>
+        <p>Follow us on social media:</p>
+        <div class="social-icons">
+            <a href="https://www.youtube.com/channel/UCNkjjlUS4QZ5yrHlO2XYDfg" aria-label="YouTube Channel"><i class="fab fa-youtube"></i></a>
+            <a href="https://twitter.com/SaplingStudios" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/company/sapling-studios/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
         </div>
     </footer>
-
-    <script>
-        function changeBackground(imageUrl) {
-            document.getElementById('backgroundOverlay').style.backgroundImage = `url(${imageUrl})`;
-            document.getElementById('backgroundOverlay').style.opacity = 0.5;
-        }
-
-        function resetBackground() {
-            document.getElementById('backgroundOverlay').style.opacity = 0;
-        }
-    </script>
 
 </body>
 </html>
