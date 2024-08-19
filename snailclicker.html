@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snail Clicker - Sapling Studios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #2c3e50, #1a252f); /* Dark gradient */
+            color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .content-container {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            max-width: 800px;
+            margin: auto;
+            position: relative;
+        }
+
+        .header-banner {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            border-radius: 50%;
+            height: 80px;
+            width: 80px;
+            object-fit: cover;
+            border: 3px solid white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #3cb371;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .biography h2 {
+            font-size: 1.8em;
+            color: #e67e22; /* Vibrant orange color */
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .biography p {
+            font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #ecf0f1; /* Lightened text color */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .game-image {
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            border: 3px solid #3cb371;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px 0;
+        }
+
+        .back-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #3cb371;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+            .back-button:hover {
+                background-color: #2c8c60;
+            }
+
+        .footer {
+            background: #2c3e50;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 0.8em;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+            .footer p {
+                margin: 0;
+            }
+
+        .social-icons a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+            .social-icons a:hover {
+                color: #e67e22; /* Orange color on hover */
+            }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .game-image {
+                max-width: 100%;
+            }
+
+            .footer {
+                font-size: 0.7em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-container">
+        <header class="header-banner">
+            <img src="Logo.png" alt="Sapling Studios Logo" class="logo">
+            <h1>Snail Clicker</h1>
+        </header>
+
+        <div class="biography">
+            <h2>About Snail Clicker</h2>
+            <img src="SnailClicker.png" alt="Snail Clicker" class="img-fluid game-image">
+            <p>"Snail Clicker" is an engaging clicker game where your objective is simple: click the button to earn points. As you accumulate points, you can spend them to increase your point-gain rate and purchase auto-clickers to continue earning points even when you're not actively clicking.</p>
+            <p>Programmed using <strong>WebGL</strong>, this game challenges your strategy and time management as you decide when to click and when to invest in automation. It's the ultimate test of patience and precision—how fast can you grow your snail empire?</p>
+            <p>Try it out and see how far you can go!</p>
+            <a href="https://saplingstudios.itch.io/snail-clicker" target="_blank" class="btn btn-primary">Play Snail Clicker</a>
+        </div>
+
+        <a href="index.html" class="back-button">Back to Main Menu</a>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Sapling Studios</p>
+            <p>New Bern, North Carolina</p>
+            <p>Email: john.gonzalez@sapling-studios.com</p>
+            <div class="social-icons">
+                <a href="https://x.com/StudiosSapling" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/john-gonzalez-14a72a268/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
