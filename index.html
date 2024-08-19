@@ -18,7 +18,14 @@
             justify-content: space-between;
             align-items: flex-start;
             height: 100vh;
-            box-sizing: border-box; 
+            box-sizing: border-box;
+            position: relative; /* Ensure body content is relative to the background overlay */
+            z-index: 2; /* Ensure the body content is above the background overlay */
+        }
+
+        .content-container, .game-container, .footer {
+            position: relative;
+            z-index: 3; /* Higher z-index to ensure content is above the background */
         }
 
         .content-container {
@@ -169,6 +176,9 @@
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.5s ease;
+            z-index: 1; /* Lower z-index to place it behind all other content */
+            background-color: rgba(0, 0, 0, 0.5); /* Dark overlay to make the image darker */
+            filter: blur(8px); /* Blur effect */
         }
 
         @media (max-width: 768px) {
@@ -261,21 +271,21 @@
     <div class="game-container">
         <h2>Games</h2>
 
-        <a href="skattereddream.html" class="game-link">
+        <a href="skattereddream.html" class="game-link" data-image="SkatteredDream.png">
             <img src="SkatteredDream.png" alt="Skattered Dream" class="game-image">
-            </a>
+        </a>
 
-        <a href="https://saplingstudios.itch.io/snail-clicker" class="game-link">
+        <a href="https://saplingstudios.itch.io/snail-clicker" class="game-link" data-image="SnailClicker.png">
             <img src="SnailClicker.png" alt="Snail Clicker" class="game-image">
-            </a>
+        </a>
 
-        <a href="rewind.html" class="game-link">
+        <a href="rewind.html" class="game-link" data-image="Rewind.jpg">
             <img src="Rewind.jpg" alt="REWIND" class="game-image">
-            </a>
+        </a>
 
-        <a href="therustylongsword.html" class="game-link">
+        <a href="therustylongsword.html" class="game-link" data-image="RustyLongsword.png">
             <img src="RustyLongsword.png" alt="The Rusty Longsword" class="game-image">
-            </a>
+        </a>
     </div>
 
     <footer class="footer">
@@ -286,6 +296,23 @@
             <a href="https://www.linkedin.com/company/sapling-studios/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
         </div>
     </footer>
+
+    <script>
+        const gameLinks = document.querySelectorAll('.game-link');
+        const backgroundOverlay = document.getElementById('backgroundOverlay');
+
+        gameLinks.forEach(link => {
+            link.addEventListener('mouseover', () => {
+                const imageUrl = link.getAttribute('data-image');
+                backgroundOverlay.style.backgroundImage = `url(${imageUrl})`;
+                backgroundOverlay.style.opacity = 1;
+            });
+
+            link.addEventListener('mouseout', () => {
+                backgroundOverlay.style.opacity = 0;
+            });
+        });
+    </script>
 
 </body>
 </html>
