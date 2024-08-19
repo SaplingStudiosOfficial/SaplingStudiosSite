@@ -175,7 +175,7 @@
             background-position: center;
             opacity: 0;
             pointer-events: none;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.5s ease, background-image 0.5s ease; /* Added transition for background-image */
             z-index: 1; /* Lower z-index to place it behind all other content */
             background-color: rgba(0, 0, 0, 0.5); /* Dark overlay to make the image darker */
             filter: blur(8px); /* Blur effect */
@@ -303,13 +303,16 @@
 
         gameLinks.forEach(link => {
             link.addEventListener('mouseover', () => {
-                const imageUrl = link.getAttribute('data-image');
-                backgroundOverlay.style.backgroundImage = `url(${imageUrl})`;
-                backgroundOverlay.style.opacity = 1;
+                backgroundOverlay.style.opacity = 0; // Fade out the current background
+                setTimeout(() => {
+                    const imageUrl = link.getAttribute('data-image');
+                    backgroundOverlay.style.backgroundImage = `url(${imageUrl})`;
+                    backgroundOverlay.style.opacity = 1; // Fade in the new background
+                }, 300); // Adjust the delay to match the fade-out transition
             });
 
             link.addEventListener('mouseout', () => {
-                backgroundOverlay.style.opacity = 0;
+                backgroundOverlay.style.opacity = 0; // Fade out the background on mouse out
             });
         });
     </script>
